@@ -33,7 +33,7 @@ def create(request):
         return render(request, "superheroes/create.html")
 
 def update(request, hero_id):
-    update_hero = Superhero.objects.get(pk=hero_id)
+    update_hero = Superhero.objects.get(pk = hero_id)
     context = {
         'update_hero': update_hero
     }
@@ -43,11 +43,11 @@ def update(request, hero_id):
         update_hero.primary_ability = request.POST.get('primary_ability')
         update_hero.secondary_ability = request.POST.get('secondary_ability')
         update_hero.catchphrase = request.POST.get('catchphrase')
-        update_hero.save()
+        update_hero.save()  
         return HttpResponseRedirect(reverse('superheroes:index'))
     else:
-        return render(request,'superheroes/update.html',context)
+        return render(request,'superheroes/update.html', context)
         
 def delete(request,hero_id):
-    Superhero.objects.filter(pk= hero_id).delete()
+    Superhero.objects.filter(pk = hero_id).delete()
     return HttpResponseRedirect(reverse('superheroes:index'))
