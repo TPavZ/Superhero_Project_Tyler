@@ -9,13 +9,15 @@
 <body>
     <div class="content_a">
         <div class="container">
-            <h1><h1>Details About: {{single_hero.name}}</h1>
+            <h1><h1>Details About: {{single_hero.name}}</h1> 
             <h3>Name: {{single_hero.name}} </h3><br>
             <h3>Alter Ego: {{single_hero.alter_ego}}</h3><br>
             <h3>Primary Ability: {{single_hero.primary_ability}}</h3><br>
             <h3>Secondary Ability: {{single_hero.secondary_ability}}</h3><br>
             <h3>Catchphrase: {{single_hero.catchphrase}}</h3><br>
-        </div>
+            <a href = "{% url 'superheroes:update' single_hero.id %}">Update Details</a>
+            <a href = "{% url 'superheroes:delete' single_hero.id %}">Delete Hero</a>
+        </div>    
     </div>
 </body>
 </html>
