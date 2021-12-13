@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
     <link rel="stylesheet" href="{% static 'styles.css' %}">
-    <title>Superhero Index</title>
+    <title>Superhero Home</title>
 </head>
 <body>
-    <h1>List of heroes</h1>
+    <h1>List of Superheroes</h1>
     <ul>
         {% for hero in all_heroes %}
         <li> <h2>{{hero.name}} - <a href = "{% url 'superheroes:detail' hero.id %}">View Details</a></h2> </li>
